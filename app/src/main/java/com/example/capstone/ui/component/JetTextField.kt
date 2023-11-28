@@ -59,6 +59,7 @@ fun JetTextField(
                 focusedIndicatorColor = BluePrimary,
                 containerColor = BlueSecondary.copy(.1f)
             ),
-            modifier = modifier
+            modifier = modifier,
+            visualTransformation = visual
         )
 }

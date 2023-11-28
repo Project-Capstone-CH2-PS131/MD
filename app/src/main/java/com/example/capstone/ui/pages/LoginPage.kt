@@ -8,6 +8,9 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.AccountBox
+import androidx.compose.material.icons.outlined.Email
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -16,6 +19,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
@@ -23,6 +27,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.capstone.R
 import com.example.capstone.ui.component.JetButton
+import com.example.capstone.ui.component.JetTextField
+import com.example.capstone.ui.theme.BluePrimary
 import com.example.capstone.ui.theme.CapstoneTheme
 
 @Composable
@@ -65,27 +71,14 @@ fun LoginPage() {
             text = "REGISTER YOUR SMART\nFRIDGE ACCOUNT",
             fontSize = 12.sp,
             textAlign = TextAlign.Center,
-//            fontWeight = FontWeight.Bold,
             color = Color(android.graphics.Color.parseColor("#000000")),
-
-
             )
-//        JetButton(
-//            label = ""
-//        )
-//        Spacer(modifier = Modifier.height(20.dp))
-//
-//        TextFieldPassword(
-//            putName = "Your Password",
-//            Modifier.padding(top = 15.dp)
-//        )
-//        SliceButton(
-//            text = "LOG IN",
-//            modifier = Modifier.padding(horizontal = 30.dp, vertical = 15.dp)
-//        ) {
-//
-//        }
 
+        JetTextField(hint = "EMAIL", icon = Icons.Outlined.Email, keyboardType = KeyboardType.Email)
+        Column(modifier = Modifier.padding(5.dp)) {}
+        JetTextField(hint = "PASSWORD", icon = Icons.Outlined.AccountBox, keyboardType = KeyboardType.Password)
+        Column(modifier = Modifier.padding(20.dp)) {}
+        JetButton(onClick = {}, color = BluePrimary, enabled = true, label = "LOG IN")
     }
 }
 

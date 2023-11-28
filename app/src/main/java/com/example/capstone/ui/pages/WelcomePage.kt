@@ -20,6 +20,9 @@ import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.capstone.R
+import com.example.capstone.ui.component.JetButton
+import com.example.capstone.ui.theme.BlackPrimary
+import com.example.capstone.ui.theme.BluePrimary
 import com.example.capstone.ui.theme.CapstoneTheme
 
 @Composable
@@ -58,21 +61,11 @@ fun WelcomePage() {
                     contentDescription = null,
                     modifier = Modifier.height(200.dp)
                 )
-//                SecondButton(
-//                    text = "LOG IN",
-//                    modifier = Modifier.padding(horizontal = 30.dp, vertical = 15.dp)
-//                ) {
-//
-//                }
-////                val changeClor = Color(0xFF373E46)
-//                SliceButton(
-//                    text = "SIGN UP",
-//                    modifier = Modifier
-//                        .padding(horizontal = 30.dp, vertical = 15.dp)
-//
-//                ) {
-//
-//                }
+
+                Column(modifier = Modifier.padding(10.dp)) {}
+                JetButton(onClick = {}, color = BlackPrimary, enabled = true, label = "LOG IN")
+                Column(modifier = Modifier.padding(10.dp)) {}
+                JetButton(onClick = {}, color = BluePrimary, enabled = true, label = "SIGN UP")
             }
         }
 
