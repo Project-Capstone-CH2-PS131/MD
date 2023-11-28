@@ -23,11 +23,6 @@ import com.example.capstone.R
 import com.example.capstone.ui.component.SecondButton
 import com.example.capstone.ui.component.SliceButton
 import com.example.capstone.ui.theme.CapstoneTheme
-<<<<<<< Updated upstream:app/src/main/java/com/example/capstone/ui/welcomepage/WelcomePage.kt
-=======
-import com.example.capstone.ui.theme.BlackPrimary
-import com.example.capstone.ui.theme.BluePrimary
->>>>>>> Stashed changes:app/src/main/java/com/example/capstone/ui/pages/WelcomePage.kt
 
 @Composable
 fun WelcomePage() {

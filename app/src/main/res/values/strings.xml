@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">capstone</string>
-    <string name="title_activity_text_field">TextField</string>
 <<<<<<< Updated upstream
 =======
+    <string name="title_activity_text_field">TextField</string>
     <string name="title_activity_jet_button">JetButton</string>
 >>>>>>> Stashed changes
 </resources>

@@ -22,14 +22,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.capstone.R
-<<<<<<< Updated upstream:app/src/main/java/com/example/capstone/ui/loginpage/LoginPage.kt
 import com.example.capstone.ui.component.SliceButton
 import com.example.capstone.ui.component.TextFieldEmail
 import com.example.capstone.ui.component.TextFieldPassword
-=======
-import com.example.capstone.ui.component.JetTextField
-import com.example.capstone.ui.theme.BluePrimary
->>>>>>> Stashed changes:app/src/main/java/com/example/capstone/ui/pages/LoginPage.kt
 import com.example.capstone.ui.theme.CapstoneTheme
 
 @Composable
