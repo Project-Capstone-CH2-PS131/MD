@@ -11,12 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
-<<<<<<< Updated upstream
-import com.example.capstone.ui.component.JetTextField
-<<<<<<< Updated upstream
 import com.example.capstone.ui.loginpage.LoginPage
-=======
->>>>>>> Stashed changes
 import com.example.capstone.ui.theme.CapstoneTheme
 
 class MainActivity : ComponentActivity() {
