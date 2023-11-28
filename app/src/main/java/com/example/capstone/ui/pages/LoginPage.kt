@@ -22,9 +22,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.capstone.R
-import com.example.capstone.ui.component.SliceButton
-import com.example.capstone.ui.component.TextFieldEmail
-import com.example.capstone.ui.component.TextFieldPassword
+import com.example.capstone.ui.component.JetButton
 import com.example.capstone.ui.theme.CapstoneTheme
 
 @Composable
@@ -72,23 +70,21 @@ fun LoginPage() {
 
 
             )
-        TextFieldEmail(
-            putName = "Your Email",
-            Modifier
-                .padding(top = 10.dp, bottom = 15.dp,)
-        )
-        Spacer(modifier = Modifier.height(20.dp))
-
-        TextFieldPassword(
-            putName = "Your Password",
-            Modifier.padding(top = 15.dp)
-        )
-        SliceButton(
-            text = "LOG IN",
-            modifier = Modifier.padding(horizontal = 30.dp, vertical = 15.dp)
-        ) {
-
-        }
+//        JetButton(
+//            label = ""
+//        )
+//        Spacer(modifier = Modifier.height(20.dp))
+//
+//        TextFieldPassword(
+//            putName = "Your Password",
+//            Modifier.padding(top = 15.dp)
+//        )
+//        SliceButton(
+//            text = "LOG IN",
+//            modifier = Modifier.padding(horizontal = 30.dp, vertical = 15.dp)
+//        ) {
+//
+//        }
 
     }
 }
