@@ -30,9 +30,14 @@ import org.w3c.dom.Text
 
 
 @Composable
-fun JetCard() {
+fun JetCard(
+    image: Int,
+    titile: String,
+    date: String,
+    modifier : Modifier = Modifier
+) {
     Box(
-        modifier = Modifier.fillMaxWidth(),
+        modifier.fillMaxWidth(),
         contentAlignment = Alignment.Center
     ){
         Card(
@@ -49,14 +54,14 @@ fun JetCard() {
                 modifier = Modifier.fillMaxSize()
             ) {
                 Image(
-                    painter = painterResource(id = R.drawable.banana), contentDescription = null,
+                    painter = painterResource(image), contentDescription = null,
                 )
-                Text(text = "Kulkas",
+                Text(text = titile,
                     fontWeight = FontWeight.Bold,
                     fontSize = 18.sp,
                     modifier = Modifier.padding(start = 3.dp, top = 10.dp)
                 )
-                Text(text = "date 23/12/23",
+                Text(text = date,
                     fontWeight = FontWeight.Thin,
                     fontSize = 13.sp,
                     modifier = Modifier.padding(4.dp),
@@ -72,6 +77,6 @@ fun JetCard() {
 @Composable
 fun JetCardPreview(){
     CapstoneTheme() {
-        JetCard()
+        JetCard(R.drawable.banana, "Banana", "23/12/23")
     }
 }
