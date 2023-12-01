@@ -13,7 +13,11 @@
         android:theme="@style/Theme.Capstone"
         tools:targetApi="31">
         <activity
-
+            android:name=".ui.component.JetSearchBar"
+            android:exported="false"
+            android:label="@string/title_activity_jet_search_bar"
+            android:theme="@style/Theme.Capstone" />
+        <activity
             android:name=".ui.component.JetButton"
             android:exported="false"
             android:label="@string/title_activity_jet_button"
