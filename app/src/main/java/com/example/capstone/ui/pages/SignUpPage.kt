@@ -32,7 +32,7 @@ import androidx.compose.ui.unit.sp
 import com.example.capstone.R
 import com.example.capstone.ui.component.JetButton
 import com.example.capstone.ui.component.JetTextField
-import com.example.capstone.ui.theme.CapstoneTheme
+import com.example.capstone.ui.pages.ui.theme.CapstoneTheme
 import com.example.capstone.ui.theme.BlackPrimary
 import com.example.capstone.ui.theme.BluePrimary
 import com.example.capstone.ui.theme.BlueText

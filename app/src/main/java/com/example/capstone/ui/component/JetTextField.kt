@@ -28,7 +28,8 @@ fun JetTextField(
     modifier: Modifier = Modifier,
     hint: String,
     icon: ImageVector,
-    keyboardType : KeyboardType
+    keyboardType : KeyboardType,
+    maxline: Int = 1
 ){
     var visual: VisualTransformation = VisualTransformation.None
     if(keyboardType == KeyboardType.Password){
@@ -60,6 +61,7 @@ fun JetTextField(
                 containerColor = BlueSecondary.copy(.1f)
             ),
             modifier = modifier,
-            visualTransformation = visual
+            visualTransformation = visual,
+            maxLines = maxline
         )
 }
