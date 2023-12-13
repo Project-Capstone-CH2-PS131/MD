@@ -10,6 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 
 @Composable
@@ -29,7 +30,6 @@ fun JetButton(
         modifier = modifier
             .fillMaxWidth().height(50.dp).padding(horizontal = 30.dp)
         ) {
-        Text(text = label, modifier = modifier.align(Alignment.CenterVertically))
+        Text(text = label, modifier = Modifier.align(Alignment.CenterVertically), textAlign = TextAlign.Center)
     }
 }
-
