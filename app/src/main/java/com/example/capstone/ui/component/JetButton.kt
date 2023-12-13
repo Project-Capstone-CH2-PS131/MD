@@ -21,7 +21,7 @@ fun JetButton(
     label: String
 ){
     Button(
-        onClick = { onClick},
+        onClick = { onClick() },
         enabled = enabled,
         colors = ButtonDefaults.buttonColors(
             containerColor = color
