@@ -1,6 +1,5 @@
 package com.example.capstone.ui.component
 
-import android.annotation.SuppressLint
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -23,15 +22,14 @@ import androidx.compose.ui.unit.dp
 import com.example.capstone.ui.theme.BluePrimary
 import com.example.capstone.ui.theme.BlueSecondary
 
-@SuppressLint("SuspiciousIndentation")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun JetTextField(
-    value: (String) -> Unit,
     modifier: Modifier = Modifier,
     hint: String,
-    icon: ImageVector,
-    keyboardType : KeyboardType
+    icon: ImageVector?,
+    keyboardType : KeyboardType,
+    maxline: Int = 1
 ){
     var visual: VisualTransformation = VisualTransformation.None
     if(keyboardType == KeyboardType.Password){
@@ -40,16 +38,13 @@ fun JetTextField(
     var input by remember { mutableStateOf("") }
         TextField(
             value = input,
-            onValueChange = {
-                input = it
-                value(it)
-            },
+            onValueChange = {input = it},
             label = {
                 Text(text = hint)
             },
             leadingIcon = {
                 Icon(
-                    imageVector = icon,
+                    imageVector = icon!!,
                     contentDescription = null,
                     tint = BluePrimary
                 )
@@ -65,6 +60,8 @@ fun JetTextField(
                 focusedIndicatorColor = BluePrimary,
                 containerColor = BlueSecondary.copy(.1f)
             ),
-            modifier = modifier
+            modifier = modifier,
+            visualTransformation = visual,
+            maxLines = maxline
         )
 }
