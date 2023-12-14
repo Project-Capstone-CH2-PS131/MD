@@ -20,6 +20,7 @@ import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.example.capstone.R
@@ -67,11 +68,30 @@ fun BottomBar(
     ) {
         navigationItems.forEachIndexed { index, navigationItem ->
             if (index == 2) {
-                NavigationBarItem(selected = false, onClick = { /*TODO*/ }, icon = { /*TODO*/ })
+                NavigationBarItem(selected = false,
+                    onClick = {
+//                        navController.navigate(navigationItem.screen.route) {
+//                        popUpTo(navController.graph.findStartDestination().id) {
+//                            saveState = true
+//                        }
+//                        restoreState = true
+//                        launchSingleTop = true
+//                    }
+                    } ,
+                    icon = { /*TODO*/ })
             }
+
             NavigationBarItem(
                 selected = (currentRoute == navigationItem.screen.route),
-                onClick = { },
+                onClick = {
+                    navController.navigate(navigationItem.screen.route) {
+                        popUpTo(navController.graph.findStartDestination().id) {
+                            saveState = true
+                        }
+                        restoreState = true
+                        launchSingleTop = true
+                    }
+                },
                 icon = {
                     Column(
                         horizontalAlignment = Alignment.CenterHorizontally,

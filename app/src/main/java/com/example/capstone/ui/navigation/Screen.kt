@@ -7,6 +7,6 @@ sealed class Screen(val route: String){
     object Favorite : Screen("Favorite")
     object Profile : Screen("Profile")
     object Setting :Screen("Setting")
-
+    object UploadImage: Screen("upload")
 
 }

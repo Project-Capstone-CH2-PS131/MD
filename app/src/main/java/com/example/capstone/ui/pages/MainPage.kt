@@ -28,12 +28,15 @@ import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.capstone.R
 import com.example.capstone.data.Dummy
 import com.example.capstone.ui.component.BottomBar
 import com.example.capstone.ui.component.JetCard
 import com.example.capstone.ui.component.JetSearchBar
+import com.example.capstone.ui.navigation.Screen
 import com.example.capstone.ui.theme.BluePrimary
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
@@ -42,24 +45,39 @@ import com.example.capstone.ui.theme.BluePrimary
 fun MainPage(modifier: Modifier = Modifier, user: String){
     val navController = rememberNavController()
     val scaffoldState = rememberScaffoldState()
-    androidx.compose.material.Scaffold(
-        bottomBar = { BottomBar(navController = navController) },
-        floatingActionButton = {
-            FloatingActionButton(
-                onClick = { },
-                backgroundColor = BluePrimary
-            ) {
-                Icon(
-                    imageVector = ImageVector.vectorResource(id = R.drawable.fridge),
-                    contentDescription = "scan",
-                    modifier = Modifier.size(36.dp)
-                )
-            }
-        },
-        floatingActionButtonPosition = FabPosition.Center,
-        isFloatingActionButtonDocked = true,
-        scaffoldState = scaffoldState
-    ) {
+//    androidx.compose.material.Scaffold(
+//        bottomBar = {
+//            BottomBar(navController = navController)
+//                    },
+//        floatingActionButton = {
+//            FloatingActionButton(
+//                onClick = { },
+//                backgroundColor = BluePrimary
+//            ) {
+//                Icon(
+//                    imageVector = ImageVector.vectorResource(id = R.drawable.fridge),
+//                    contentDescription = "scan",
+//                    modifier = Modifier.size(36.dp)
+//                )
+//            }
+//        },
+//        floatingActionButtonPosition = FabPosition.Center,
+//        isFloatingActionButtonDocked = true,
+//        scaffoldState = scaffoldState
+//    ) {
+//            innerPadding ->
+//        NavHost(
+//            navController = navController,
+//            startDestination = Screen.Home.route,
+//            modifier = Modifier.padding(innerPadding)
+//        ){
+//            composable(Screen.Home.route){
+//                MainPage(user = "Zufar")
+//            }
+//            composable(Screen.Profile.route){
+//                ProfilePage(nameProfile = "zufar", email = "zufar@gmail.com")
+//            }
+//        }
         Image(painter = painterResource(id = R.drawable.corner), contentDescription = null, modifier = Modifier.size(100.dp))
         Text("HI "+user, fontWeight = FontWeight.Bold, fontSize = 20.sp, modifier = Modifier.padding(start = 100.dp, top = 10.dp))
         Column(modifier = modifier.padding(5.dp, top = 50.dp), horizontalAlignment = Alignment.CenterHorizontally) {
@@ -78,7 +96,7 @@ fun MainPage(modifier: Modifier = Modifier, user: String){
 
             lazyGrid()
         }
-    }
+//    }
 
 }
 

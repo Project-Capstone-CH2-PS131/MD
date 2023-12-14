@@ -158,7 +158,7 @@ fun UploadPage() {
                     hint = "Description",
                     icon = Icons.Outlined.Add,
                     keyboardType = KeyboardType.Text,
-                    maxline = 10,
+//                    maxline = 10,
                     modifier = Modifier.padding(top = 15.dp),
                     value = { new -> description = new }
                 )

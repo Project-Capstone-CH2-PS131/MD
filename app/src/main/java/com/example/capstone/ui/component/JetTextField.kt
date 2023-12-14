@@ -31,7 +31,7 @@ fun JetTextField(
     modifier: Modifier = Modifier,
     hint: String,
     icon: ImageVector,
-    keyboardType : KeyboardType
+    keyboardType : KeyboardType,
 ){
     var visual: VisualTransformation = VisualTransformation.None
     if(keyboardType == KeyboardType.Password){

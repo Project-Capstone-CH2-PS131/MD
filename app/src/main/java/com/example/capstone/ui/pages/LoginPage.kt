@@ -8,6 +8,9 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.AccountBox
+import androidx.compose.material.icons.outlined.Email
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -20,15 +23,19 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.capstone.R
-import com.example.capstone.ui.component.SliceButton
-import com.example.capstone.ui.component.TextFieldEmail
-import com.example.capstone.ui.component.TextFieldPassword
+import com.example.capstone.ui.component.JetButton
+import com.example.capstone.ui.component.JetTextField
+import com.example.capstone.ui.theme.BluePrimary
+//import com.example.capstone.ui.component.SliceButton
+//import com.example.capstone.ui.component.TextFieldEmail
+//import com.example.capstone.ui.component.TextFieldPassword
 import com.example.capstone.ui.theme.CapstoneTheme
 
 @Composable
