@@ -25,6 +25,7 @@ import com.example.capstone.ui.theme.BlueSecondary
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun JetTextField(
+    value: (String) -> Unit,
     modifier: Modifier = Modifier,
     hint: String,
     icon: ImageVector?,
@@ -38,7 +39,10 @@ fun JetTextField(
     var input by remember { mutableStateOf("") }
         TextField(
             value = input,
-            onValueChange = {input = it},
+            onValueChange = {
+                input = it
+                value(it)
+            },
             label = {
                 Text(text = hint)
             },
