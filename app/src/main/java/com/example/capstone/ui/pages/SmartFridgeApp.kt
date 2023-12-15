@@ -28,7 +28,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.capstone.R
 import com.example.capstone.ui.component.BottomBar
-import com.example.capstone.ui.loginpage.LoginPage
+import com.example.capstone.ui.pages.login.LoginPage
 import com.example.capstone.ui.navigation.Screen
 import com.example.capstone.ui.theme.BluePrimary
 import com.example.capstone.ui.theme.CapstoneTheme

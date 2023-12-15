@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 
 class SignUpViewModel(private val repository: FridgeRepository): ViewModel() {
 
-    suspend fun register(name: String, email: String, password: String) : LiveData<UiState<AuthResponse>> {
-        return repository.register(name, email, password)
-    }
+//    suspend fun register(name: String, email: String, password: String) : LiveData<UiState<AuthResponse>> {
+//        return repository.register(name, email, password)
+//    }
 }

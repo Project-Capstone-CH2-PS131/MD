@@ -1,5 +1,6 @@
-package com.example.capstone.ui.loginpage
+package com.example.capstone.ui.pages.login
 
+import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -29,12 +30,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.capstone.R
+import com.example.capstone.data.remote.retrofit.ApiConfig
+import com.example.capstone.data.repository.AuthRepository
 import com.example.capstone.ui.component.JetButton
 import com.example.capstone.ui.component.JetTextField
 import com.example.capstone.ui.theme.BluePrimary
-//import com.example.capstone.ui.component.SliceButton
-//import com.example.capstone.ui.component.TextFieldEmail
-//import com.example.capstone.ui.component.TextFieldPassword
 import com.example.capstone.ui.theme.CapstoneTheme
 
 @Composable
@@ -83,7 +83,9 @@ fun LoginPage() {
         Column(modifier = Modifier.padding(5.dp)) {}
         JetTextField(hint = "PASSWORD", icon = Icons.Outlined.AccountBox, keyboardType = KeyboardType.Password, value = { new -> password = new })
         Column(modifier = Modifier.padding(20.dp)) {}
-        JetButton(onClick = {}, color = BluePrimary, enabled = true, label = "LOG IN")
+        JetButton(onClick = {
+                            login(email, password)
+        }, color = BluePrimary, enabled = true, label = "LOG IN")
     }
 }
 
@@ -91,8 +93,18 @@ fun LoginPage() {
 @Composable
 fun LoginPreview(){
     CapstoneTheme() {
-        com.example.capstone.ui.pages.login.LoginPage()
+        LoginPage()
     }
+}
+
+fun login(email: String, password: String){
+    val auth = LoginViewModel(AuthRepository(ApiConfig.getApiService(null)))
+    auth.login(email, password).thenAccept {
+        response ->
+        Log.d("test123", response.toString())
+    }.exceptionally { throwable ->
+        Log.d("test123", throwable.toString())
+        null }
 }
 
 

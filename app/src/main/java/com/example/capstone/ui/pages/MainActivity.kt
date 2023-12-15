@@ -10,9 +10,8 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.capstone.ui.loginpage.LoginPage
+import com.example.capstone.ui.pages.login.LoginPage
 import com.example.capstone.ui.theme.CapstoneTheme
-import com.example.capstone.ui.welcomepage.WelcomePage
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,7 +34,8 @@ class MainActivity : ComponentActivity() {
 fun Greeting() {
 //    MainPage(user = "zufar")
 //    SmartFridgeApp()
-    UploadPage()
+//    UploadPage()
+    LoginPage()
 }
 
 @Preview(showBackground = true)

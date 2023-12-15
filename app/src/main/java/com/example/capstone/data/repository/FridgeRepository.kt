@@ -26,16 +26,16 @@ class FridgeRepository private constructor(
     }
 
 //    Create Account
-    suspend fun register(name: String, email: String, password: String): LiveData<UiState<AuthResponse>> =
-        liveData {
-            emit(UiState.Loading)
-            val response = apiService.register(name, email, password)
-            if (!response.error){
-                emit(UiState.Success(response))
-            }else{
-                emit(UiState.Error(response.message))
-            }
-        }
+//    suspend fun register(name: String, email: String, password: String): LiveData<UiState<AuthResponse>> =
+//        liveData {
+//            emit(UiState.Loading)
+//            val response = apiService.register(name, email, password)
+//            if (!response.error){
+//                emit(UiState.Success(response))
+//            }else{
+//                emit(UiState.Error(response.message))
+//            }
+//        }
 
 
 
