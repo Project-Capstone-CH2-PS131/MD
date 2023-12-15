@@ -1,4 +1,4 @@
-package com.example.capstone.ui.pages
+package com.example.capstone.ui.pages.register
 
 import android.util.Log
 import androidx.compose.foundation.Image
@@ -74,7 +74,7 @@ fun SignUpPage(){
         Column(modifier = Modifier.padding(5.dp)){}
         JetTextField(hint = "PASSWORD", icon = Icons.Outlined.AccountBox, keyboardType = KeyboardType.Password, value = { new -> password = new })
         Column(modifier = Modifier.padding(20.dp)){}
-        JetButton(onClick = {register(username, email, password)}, color = BluePrimary, enabled = true, label = "SIGN UP")
+        JetButton(onClick = { register(username, email, password) }, color = BluePrimary, enabled = true, label = "SIGN UP")
     }
 }
 
