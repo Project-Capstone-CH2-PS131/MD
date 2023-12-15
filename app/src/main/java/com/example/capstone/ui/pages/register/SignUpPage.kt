@@ -1,5 +1,6 @@
 package com.example.capstone.ui.pages.register
 
+import android.content.Context
 import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
@@ -19,6 +20,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
@@ -28,6 +30,8 @@ import androidx.compose.ui.unit.sp
 import com.example.capstone.R
 import com.example.capstone.data.remote.response.AuthResponse
 import com.example.capstone.data.remote.retrofit.ApiConfig
+import com.example.capstone.di.Injection
+import com.example.capstone.ui.ViewModelFactory
 import com.example.capstone.ui.component.JetButton
 import com.example.capstone.ui.component.JetTextField
 import com.example.capstone.ui.theme.BlackPrimary
@@ -37,7 +41,11 @@ import retrofit2.Call
 import retrofit2.Callback
 
 @Composable
-fun SignUpPage(){
+fun SignUpPage(
+    context: Context = LocalContext.current,
+    viewModel: SignUpViewModel = androidx.lifecycle.viewmodel.compose.viewModel(
+        factory = ViewModelFactory(Injection.provideRepository(context)))
+){
     var username by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
@@ -68,31 +76,38 @@ fun SignUpPage(){
             textAlign = TextAlign.Center,
             color = BlackPrimary,
         )
-        JetTextField(hint = "USERNAME", icon = Icons.Outlined.Person, keyboardType = KeyboardType.Text, value = { new -> username = new })
+        JetTextField(
+            hint = "USERNAME",
+            icon = Icons.Outlined.Person,
+            keyboardType = KeyboardType.Text,
+            value = { new -> username = new })
         Column(modifier = Modifier.padding(5.dp)){}
         JetTextField(hint = "EMAIL", icon = Icons.Outlined.Email, keyboardType = KeyboardType.Email, value = { new -> email = new })
         Column(modifier = Modifier.padding(5.dp)){}
         JetTextField(hint = "PASSWORD", icon = Icons.Outlined.AccountBox, keyboardType = KeyboardType.Password, value = { new -> password = new })
         Column(modifier = Modifier.padding(20.dp)){}
-        JetButton(onClick = { register(username, email, password) }, color = BluePrimary, enabled = true, label = "SIGN UP")
+        JetButton(
+//            onClick = { viewModel.register(username, email, password)},
+            onClick = {},
+            color = BluePrimary, enabled = true, label = "SIGN UP")
     }
 }
 
-private fun register(username: String, email: String, password: String){
-    val client = ApiConfig.getApiService().register(username, email, password)
-    client.enqueue(object : Callback<AuthResponse>{
-        override fun onResponse(call: Call<AuthResponse>, response: retrofit2.Response<AuthResponse>) {
-            if (response.isSuccessful){
-                val responseBody = response.body()
-                Log.d("test123", "success "+responseBody!!.token)
-            }
-            else{
-            }
-        }
-
-        override fun onFailure(call: Call<AuthResponse>, t: Throwable) {
-            Log.d("Error : ", call.toString())
-        }
-    })
-}
+//private fun register(username: String, email: String, password: String){
+//    val client = ApiConfig.getApiService().register(username, email, password)
+//    client.enqueue(object : Callback<AuthResponse>{
+//        override fun onResponse(call: Call<AuthResponse>, response: retrofit2.Response<AuthResponse>) {
+//            if (response.isSuccessful){
+//                val responseBody = response.body()
+//                Log.d("test123", "success "+responseBody!!.token)
+//            }
+//            else{
+//            }
+//        }
+//
+//        override fun onFailure(call: Call<AuthResponse>, t: Throwable) {
+//            Log.d("Error : ", call.toString())
+//        }
+//    })
+//}
 

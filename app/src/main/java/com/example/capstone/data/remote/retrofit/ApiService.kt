@@ -13,5 +13,5 @@ interface ApiService {
         @Field("name")name: String,
         @Field("email")email: String,
         @Field("password")password: String
-    ): Call<AuthResponse>
+    ): AuthResponse
 }

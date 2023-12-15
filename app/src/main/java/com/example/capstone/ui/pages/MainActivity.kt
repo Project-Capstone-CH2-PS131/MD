@@ -34,7 +34,8 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Greeting() {
 //    MainPage(user = "zufar")
-    SmartFridgeApp()
+//    SmartFridgeApp()
+    UploadPage()
 }
 
 @Preview(showBackground = true)
